@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="title"><h1 style="text-align: center;"><br><u> Length Converter</u></h1>
+    <p style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home</a> >> <a href="{{url_for('conversion')}}">Conversion</a> >> <a href="{{url_for('length')}}">Length Conversion</a> >> <a href="{{url_for('mili')}}">Milimeter</a></p></div>
+
+<form action="/mili" method="POST">
+    <p style="text-align: center;">Milimeter <input type="text" name="mili"></p>
+    
+    <p style="text-align: center;"><button type="submit" value="submit">Calculate</button></p>
+    {% if answer7%}
+    <div class="content">
+        <table style="border:1px solid black;margin-left:auto;margin-right:auto;">
+            <tr>
+                <th>Miles</th>
+                <th>Kilometer</th>
+                <th>Meter</th>
+                <th>Feet</th>
+                <th>Inches</th>
+                <th>Centimeter</th>
+                <th>Milimeter</th>
+                <th>Yards</th>
+            </tr>
+            <tr>
+                <td>{{answer1}}</td>
+                <td>{{answer2}}</td>
+                <td>{{answer3}}</td>
+                <td>{{answer4}}</td>
+                <td>{{answer5}}</td>
+                <td>{{answer6}}</td>
+                <td>{{answer7}}</td>
+                <td>{{answer8}}</td>
+            </tr>
+            </table>
+            </div>
+    {%endif%}
+</form>
+
+<h5 style="text-align: center;">Metric Conversion<a href="{{ url_for('conversion') }}"><button type="button" class="glow-on-hover">Click here</button></a></h5>
+
+{% endblock %}

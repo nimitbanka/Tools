@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="title"><h1 style="text-align: center;"><u> Tools Apps</u></h1>
+    <p style="text-align: center;">The all in one tools app</p>
+    <p style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home</a></p>
+</div>
+
+<br><div class="parent">
+
+    <div class="child">
+        <p style="text-align: center;">List out your tasks<br>
+            <a href="{{ url_for('taskmanager') }}">
+                <button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button>
+            </a>
+        </p>
+    </div>
+    <div class="child">
+        <p style="text-align: center;">Calculate your BMI <br>
+            <a href="{{ url_for('cal_bmi') }}">
+                <button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button>
+            </a>
+        </p>
+    </div>
+    <div class="child">
+        <p style="text-align: center;">Open Simple Calculator<br>
+            <a href="{{ url_for('calculator') }}">
+                <button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button>
+            </a>
+        </p>
+    </div>
+    <div class="child">
+        <p style="text-align: center;">Metric Coversions <br><br>
+            <a href="{{ url_for('conversion') }}">
+                <button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button>
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

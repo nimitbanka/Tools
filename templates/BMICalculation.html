@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="title"><h1 style="text-align: center;"><br><u> BMI Calculation</u></h1>
+    <p style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home</a> >> <a href="{{ url_for('cal_bmi')}}">BMI</a></p></div>
+<br>
+<form action="/bmi" method="POST">
+    <p style="text-align: center;">Weight(Kg) <input type="text" name="weight"></p>
+    
+    <p style="text-align: center;">Height(cm) <input type="text" name="height"></p>
+    
+    <p style="text-align: center;"><button type="submit" value="submit">Calculate</button></p>
+</form>
+{%if bmi%}
+<p style="text-align: center;">Your BMI is <b>{{bmi}}</b>. You are <b>{{type}}</b></p>
+{%endif%}
+<h5 style="text-align: center;">Click on the button to visit the main page..<a href="{{ url_for('mainpage') }}"><button type="button" class="glow-on-hover">Click here</button></a></h5>
+{%endblock%}

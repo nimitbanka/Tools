@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="title"><h1 style="text-align: center;"><br><u> Length Converter</u></h1>
+    <p style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home</a> >> <a href="{{url_for('conversion')}}">Conversion</a> >> <a href="{{url_for('length')}}">Length Conversion</a></p></div>
+<div class="content">
+    <table style="border:1px solid black;margin-left:auto;margin-right:auto;">
+        <tr>
+            <h3>Length</h3><br>
+        </tr>
+        <tr>
+            <a href="{{ url_for('miles') }}"><button type="button" class="glow-on-hover">Miles</button></a>
+        </tr>
+        <tr>
+            <a href="{{ url_for('kilometer') }}"><button type="button" class="glow-on-hover">Kilometers</button></a>
+        </tr>
+        <tr>
+            <a href="{{ url_for('meter') }}"><button type="button" class="glow-on-hover">Meter</button></a>
+        </tr>
+        <tr>
+            <a href="{{ url_for('foot') }}"><button type="button" class="glow-on-hover">Feet</button></a>
+        </tr>
+        <tr>
+            <a href="{{ url_for('inches') }}"><button type="button" class="glow-on-hover">Inches</button></a>
+        </tr>
+        <tr>
+            <a href="{{ url_for('centi') }}"><button type="button" class="glow-on-hover">Centimeter</button></a>
+        </tr>
+        <tr>
+            <a href="{{ url_for('mili') }}"><button type="button" class="glow-on-hover">Milimeter</button></a>
+        </tr>
+        <tr>
+            <a href="{{ url_for('yard') }}"><button type="button" class="glow-on-hover">Yard</button></a>
+        </tr>
+    </table>
+    
+</div>
+
+<h5 style="text-align: center;position:relative;">Metric Conversion<a href="{{ url_for('conversion') }}"><button type="button" class="glow-on-hover">Click here</button></a></h5>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="title"><h1 style="text-align: center;"><br><u> Temperature converter</u></h1>
+    <p style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home</a> >> <a href="{{url_for('conversion')}}">Conversion</a></p> >> <a href="{{url_for('temperature')}}">Temperature Conversion</a></div>
+<br>
+<form action="/temperature" method="POST">
+    <p style="text-align: center;">Celsius <input type="text" name="celsius"></p>
+    
+    <p style="text-align: center;">Fahrenheit <input type="text" name="fahrenheit"></p>
+    <p style="text-align: center;">Kelvin <input type="text" name="kelvin"></p>
+
+    
+    <p style="text-align: center;"><button type="submit" value="submit">Calculate</button></p>
+    {% if answer1%}
+    <p style="text-align: center;"> <b>Celsius ==> {{answer1}} <br> Fahrenheit ==> {{answer2}} <br> Kelvin ==> {{answer3}}</b></p>
+    {%endif%}
+</form>
+
+<h5 style="text-align:center;">Metric Conversion<a href="{{ url_for('conversion') }}"><button type="button" class="glow-on-hover">Click here</button></a></h5>
+{%endblock%}

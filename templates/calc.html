@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/calc.css') }}">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title"><h1 style="text-align: center;"><br><u> Calculator</u></h1></div>
+        
+        <div class="calculator">
+            <input type="text" name="screen" id="screen">
+        <table>
+            <tr><td><button class="button">(</button></td>
+                <td><button class="button">) </button></td>
+                <td><button class="button" style="background: brown;">C</button></td>
+                <td><button class="button">%</button></td>
+            </tr>
+            <tr><td><button class="button">7</button></td>
+                <td><button class="button">8 </button></td>
+                <td><button class="button">9</button></td>
+                <td><button class="button">X</button></td>
+            </tr>
+            <tr><td><button class="button">4</button></td>
+                <td><button class="button">5</button></td>
+                <td><button class="button">6</button></td>
+                <td><button class="button">-</button></td>
+            </tr>
+            <tr><td><button class="button">1</button></td>
+                <td><button class="button">2 </button></td>
+                <td><button class="button">3</button></td>
+                <td><button class="button">+</button></td>
+            </tr>
+            <tr><td><button class="button">0</button></td>
+                <td><button class="button">. </button></td>
+                <td><button class="button">/</button></td>
+                <td><button class="button">=</button></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    <h5>Click on the button to visit the main page..</h5><a href="{{ url_for('mainpage') }}"><button type="button" class="glow-on-hover">Click here</button></a>
+    <div id="footer"><p  style="text-align: center;">This Page is developed and managed by Nimit Banka <br> Contact <br>Phone: 9546607724<br>Email: nimit.banka@gmail.com</p>
+        <br>
+        </div>
+</body>
+<script src="{{ url_for('static', filename='javascript/index.js') }}"></Script>
+</html>

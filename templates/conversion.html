@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="title"><h1 style="text-align: center;"><u> Metric Conversion</u></h1>
+    <p style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home</a> >> <a href="{{url_for('conversion')}}">Conversion</a></p>
+</div><br>
+<div class="parent">
+
+    <div class="child">
+        <p style="text-align: center;">Temperature Conversion<br>
+            <a href="{{ url_for('temperature') }}">
+                <button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button>
+            </a>
+        </p>
+    </div>
+    <div class="child">
+        <p style="text-align: center;">Weight Conversion<br><br>
+            <a href="{{ url_for('weight') }}">
+                <button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button>
+            </a>
+        </p>
+    </div>
+    <div class="child">
+        <p style="text-align: center;">Length Conversion<br><br>
+            <a href="{{ url_for('length') }}">
+                <button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button>
+            </a>
+        </p>
+    </div>
+</div>
+
+<h5 style="text-align: center;">Click on the button to visit the main page..<a href="{{ url_for('mainpage') }}"><button type="button" class="glow-on-hover">Click here</button></a></h5>
+
+{% endblock %}

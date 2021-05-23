@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="title"><h1 style="text-align: center;"><br><u> Weight converter</u></h1>
+    <p style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home</a> >> <a href="{{url_for('conversion')}}">Conversion</a> >> <a href="{{url_for('weight')}}">Weight Conversion</a></p></div>
+<br>
+<form action="/weight" method="POST">
+    <p style="text-align: center;">Kilograms <input type="text" name="Kg"></p>
+    
+    <p style="text-align: center;">Pounds <input type="text" name="pound"></p>
+
+    
+    <p style="text-align: center;"><button type="submit" value="submit">Calculate</button></p>
+    {% if answer1%}
+    <p style="text-align: center;"> <b>Kilograms ==> {{answer1}} Kg <br> Pounds ==> {{answer2}} lb</p>
+    {%endif%}
+</form>
+
+
+<h5 style="text-align: center;">Metric Conversion<a href="{{ url_for('conversion') }}"><button type="button" class="glow-on-hover">Click here</button></a></h5>
+
+{% endblock %}
