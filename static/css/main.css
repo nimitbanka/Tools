@@ -2,14 +2,16 @@
 body, html {
     margin: 0;
     font-family:'Courier New', Courier, monospace;
-    background:rgb(0, 0, 0);
+    background:rgb(61, 61, 61);
     color: aliceblue;
 }
 .title{
-    background-color: #E94B3CFF;
-    color:rgb(0, 0, 0);
+    background-color: rgb(32, 32, 32);
+    color:aliceblue;
 }
-
+a{
+    color: aliceblue;
+}
 .glow-on-hover {
     width: 220px;
     height: 50px;
@@ -72,14 +74,13 @@ body, html {
 .parent {
     display: flex;
     flex-wrap: wrap;
-    color: #E94B3CFF;
-  }
+    color:aliceblue  }
   
 .child {
     flex: 0 1 300px;
     flex: 1 1 300px;
-    border: 1px solid rgb(129, 19, 19);
-    background: rgb(5, 1, 2);
+    border: 1px solid white;
+    background: rgb(61, 61, 61);
     font-size: 2rem;
     text-align: center;
     padding: 20px;
@@ -96,6 +97,7 @@ table, td, th {
 table {
     border-collapse: collapse;
     width: 100%;
+    color:aliceblue
 }
 
 th {
@@ -121,7 +123,7 @@ td {
     width: 98%;
     /* Height of the footer*/ 
     height: 90px;
-    background: #E94B3CFF;;
+    background: rgb(32, 32, 32);
 }
 div{
     padding-bottom: 10px;
