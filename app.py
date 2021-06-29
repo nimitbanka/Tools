@@ -265,7 +265,7 @@ def weight():
         if(request.form.get('Kg') != ''):
             Kg = float(request.form.get('Kg'))
             answer1 = Kg
-            answer2 = Kg * 2.2046bbb
+            answer2 = Kg * 2.2046
         elif(request.form.get('pound')!=''):
             Pound = float(request.form.get('pound'))
             answer1 = Pound/2.2046
