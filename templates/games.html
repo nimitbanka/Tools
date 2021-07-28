@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="title"><h1 style="text-align: center;"><u> GAMES</u></h1>
+    <p style="text-align: center;">More Games Under development</p>
+    <p style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home</a></p>
+</div>
+<section class="info">
+    
+  <section class="cards-wrapper">
+    <div class="card-grid-space">
+      <a class="card" href="{{ url_for('rps') }}" style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)">
+        <div>
+          <h1>Rock-Papper-Scissors</h1>
+        </div>
+      </a>
+    </div>
+    </section>
+</section>
+<div>
+    <h5 style="text-align: center;"><a href="{{ url_for('mainpage') }}"><button type="button" class="glow-on-hover">Home Page</button></a></h5>
+</div>
+
+{% endblock %}

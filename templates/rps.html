@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rps.css') }}">
+
+</head>
+<body>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    
+    <div class="score-board">
+        <div id = "user-label" class="badge">user</div>
+        <div id = "computer-label" class= "badge">comp</div>
+        <spam id = "user-score">0</spam>:<spam id="computer-score">0</spam>
+    </div>
+    <div class="result">
+        <p>Paper covers rock. You win</p>
+    </div>
+    <div class="choices">
+        <div class="choice" id='r'>
+            <img src="#" alt="rock">
+        </div>
+        <div class="choice" id="p">
+            <img src="#" alt ="paper">
+        </div>
+        <div class="choice" id="s">
+            <img src="#" alt="scissor">
+        </div>
+    </div>
+    <p id ="action-message">Make your move</p>
+    <script src="{{ url_for('static', filename='javascript/rps.js') }}"></script>
+    <br>
+    <div>
+        <h5 style="text-align: center;"><a href="{{ url_for('games') }}"><button type="button" class="glow-on-hover">More Games</button></a></h5>
+    </div>
+</body>
+</html>

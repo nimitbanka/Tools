@@ -60,7 +60,12 @@ def update(id):
 @app.route('/')
 def mainpage():
     return render_template("main.html")
-
+@app.route('/games')
+def games():
+    return render_template("games.html")
+@app.route('/games/rps')
+def rps():
+    return render_template("rps.html")
 @app.route('/index')
 def taskmanager():
     return render_template("index.html")
