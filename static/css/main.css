@@ -25,7 +25,6 @@ a {
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2rem;
   padding: 2rem;
   margin: 0 auto;
@@ -157,6 +156,11 @@ a {
 }
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 2000px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 @media screen and (max-width: 1285px) {
   .cards-wrapper {
     grid-template-columns: 1fr 1fr;
