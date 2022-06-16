@@ -5,8 +5,6 @@ import json
 import urllib.request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from flask import Flask,render_template, request
-from flask_mysqldb import MySQL
 from sqlalchemy import true
 
  #venv\Scripts\activate
@@ -71,37 +69,12 @@ def update(id):
     else:
         return render_template("update.html", task= task)
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'mydb'
+
  
-mysql = MySQL(app)
 
-@app.route('/form')
-def form():
-    return render_template("form.html")
 
-@app.route('/login', methods = ['POST', 'GET'])
-def login():
-    if request.method == 'GET':
-        return "Login via the login Form"
-     
-    if request.method == 'POST':
-        firstname = request.form['firstname'];
-        lastname = request.form['lastname'];
-        email = request.form['email'];
-        try:
-            cursor = mysql.connection.cursor()
-            cursor.execute(''' INSERT INTO test VALUES(%s, %s, %s)''',(firstname, lastname, email))
-            mysql.connection.commit()
-            cursor.close()
-            return f"Done!!"
-        except:
-            return f"Your Details are already submitted"
-    else:
-        return render_template("form.html")
-app.run(host='localhost', port=5000)
+
+
 
 
 # Done by Shikhar
