@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+
+{% endblock %}
+
+{% block body %}
+<div class="title"><h1 style="text-align: center;"><u>LIVE WEATHER</u></h1>
+    <p style="text-align: center;"></p>
+    <p style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home >></a><a href="{{ url_for('weather') }}">weather</a></p>
+</div>
+<section class="info">
+    
+    <form method="POST" class="content" style="text-align: center;">
+        <p style="text-align: center;">City <input type="text" name="city" class="form-control" placeholder={{data.cityname}}></p>
+    
+        <p style="text-align: center;"><button type="submit" value="search">Search</button></p>
+
+    
+    <br>
+        <div class="row" style="margin-left: auto; margin-right: auto;">
+            {% if data.country_code and data.coordinate and data.temp and data.pressure and data.humidity %}
+            <table style="border:1px solid black;margin-left:auto;margin-right:auto;">
+                <tr>
+                    <th>Country code</th>
+                    <th>{{data.country_code}}</th>
+                </tr>
+                <tr>
+                    <th>City Name</th>
+                    <th>{{data.cityname}}</th>
+                </tr>
+                <tr>
+                    <th>City Coordinate</th>
+                    <th>{{data.coordinate}}</th>
+                </tr>
+                <tr>
+                    <th>Temperature in Kelvin</th>
+                    <th>{{data.temp}}</th>
+                </tr>
+                <tr>
+                    <th>Temperature in Celcius</th>
+                    <th>{{data.temp_cel}}</th>
+                </tr>
+                <tr>
+                    <th>Pressure</th>
+                    <th>{{data.pressure}}</th>
+                </tr>
+                <tr>
+                    <th>humidity
+                    <th>{{data.humidity}}</th>
+                </tr>
+
+                </table>
+            {% endif %}
+          </div>
+        </form>
+</section>
+<div>
+    <h5 style="text-align: center;"><a href="{{ url_for('mainpage') }}"><button type="button" class="glow-on-hover">Home Page</button></a></h5>
+</div>
+
+{% endblock %}

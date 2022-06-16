@@ -1,10 +1,22 @@
-from flask import Flask, render_template, url_for, request, redirect
+from enum import unique
+from click import password_option
+from flask import Flask, render_template, url_for, request, redirect,abort
+import json
+import urllib.request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from flask import Flask,render_template, request
+from flask_mysqldb import MySQL
+from sqlalchemy import true
+
+ #venv\Scripts\activate
+ #flask run
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
+
+
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200),nullable=False)
@@ -32,6 +44,8 @@ def index():
         tasks = Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html', tasks = tasks)
 
+
+
 @app.route('/delete/<int:id>')
 def delete(id):
     task_to_delete = Todo.query.get_or_404(id)
@@ -57,6 +71,67 @@ def update(id):
     else:
         return render_template("update.html", task= task)
 
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'mydb'
+ 
+mysql = MySQL(app)
+
+@app.route('/form')
+def form():
+    return render_template("form.html")
+
+@app.route('/login', methods = ['POST', 'GET'])
+def login():
+    if request.method == 'GET':
+        return "Login via the login Form"
+     
+    if request.method == 'POST':
+        firstname = request.form['firstname'];
+        lastname = request.form['lastname'];
+        email = request.form['email'];
+        try:
+            cursor = mysql.connection.cursor()
+            cursor.execute(''' INSERT INTO test VALUES(%s, %s, %s)''',(firstname, lastname, email))
+            mysql.connection.commit()
+            cursor.close()
+            return f"Done!!"
+        except:
+            return f"Your Details are already submitted"
+    else:
+        return render_template("form.html")
+app.run(host='localhost', port=5000)
+
+
+# Done by Shikhar
+def tocelcius(temp):
+    return str(round(float(temp) - 273.16,2))
+@app.route('/weather',methods=['POST','GET'])
+def weather():
+    api_key = 'c157762b8e77413ad4ceffcc264e2b08'
+    if request.method == 'POST':
+        city = request.form['city']
+    else:
+        city = 'jaipur'
+
+    try:
+        source = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid='+api_key).read()
+    except:
+        return abort(404)
+
+    list_of_data = json.loads(source)
+    data = {
+        "country_code": str(list_of_data['sys']['country']),
+        "coordinate": str(list_of_data['coord']['lon']) + ' ' + str(list_of_data['coord']['lat']),
+        "temp": str(list_of_data['main']['temp']) + ' k',
+        "temp_cel": tocelcius(list_of_data['main']['temp']) + ' C',
+        "pressure": str(list_of_data['main']['pressure']),
+        "humidity": str(list_of_data['main']['humidity']),
+        "cityname":str(city),
+    }
+    return render_template('weather.html',data=data)
+#Done by Nimit
 @app.route('/')
 def mainpage():
     return render_template("main.html")
@@ -262,6 +337,7 @@ def yard():
             answer8=yard
     return render_template("yard.html",answer1=answer1, answer2=answer2,answer3=answer3,answer4=answer4,answer5=answer5,answer6=answer6,answer7=answer7,answer8=answer8)
 
+# Done by Shikhar
 @app.route('/weight', methods=['POST','GET'])
 def weight():
     answer1 =''

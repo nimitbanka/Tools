@@ -7,13 +7,13 @@
 {% block body %}
 <div class="title"><h1 style="text-align: center;"><u> Tools App</u></h1>
     <p style="text-align: center;">This website contain Many Tools from calculator to metric conversions as well as you can write your To-DO list</p>
-    <p style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home</a></p>
+    <span style="text-align: left;"><a href="{{ url_for('mainpage') }}">Home</a></span><span style="text-align: right; margin-left: 80%; margin-right: 10px;"><a href="{{ url_for('form') }}">Signup to our news letter</a></span>
 </div>
 <section class="info">
     
   <section class="cards-wrapper">
     <div class="card-grid-space">
-      <a class="card" href="{{ url_for('taskmanager') }}" style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)">
+      <a class="card" href="{{ url_for('taskmanager') }}" style="--bg-img: url('/static/img/todo.jpg')">
         <div>
           <h1>To-Do List</h1>
           <p>List out your daily targets.</p>
@@ -21,7 +21,7 @@
       </a>
     </div>
     <div class="card-grid-space">
-      <a class="card" href="{{ url_for('cal_bmi') }}" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+      <a class="card" href="{{ url_for('cal_bmi') }}" style="--bg-img: url('/static/img/bmi.jpg')">
         <div>
           <h1>BMI Calculator</h1>
           <p>Calculate your BMI and eat accordingly</p>
@@ -29,7 +29,7 @@
       </a>
     </div>
     <div class="card-grid-space">
-        <a class="card" href="{{ url_for('calculator') }}" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+        <a class="card" href="{{ url_for('calculator') }}" style="--bg-img: url('/static/img/calculator.jpg')">
           <div>
             <h1>Calculator</h1>
             <p>Simple calculator to perform daily calculations</p>
@@ -37,7 +37,7 @@
         </a>
       </div>
     <div class="card-grid-space">
-      <a class="card" href="{{ url_for('conversion') }}" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+      <a class="card" href="{{ url_for('conversion') }}" style="--bg-img: url('/static/img/calculator.jpg')">
         <div>
           <h1>Metric Coversions</h1>
           <p></p>
@@ -45,7 +45,15 @@
       </a>
     </div>
     <div class="card-grid-space">
-      <a class="card" href="{{ url_for('games') }}" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+      <a class="card" href="{{ url_for('weather') }}" style="--bg-img: url('/static/img/weather.jpg')">
+        <div>
+          <h1>weather</h1>
+          <p></p>
+        </div>
+      </a>
+    </div>
+    <div class="card-grid-space">
+      <a class="card" href="{{ url_for('games') }}" style="--bg-img: url('/static/img/games.jpg')">
         <div>
           <h1>Games</h1>
           <p></p>

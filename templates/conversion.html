@@ -12,21 +12,21 @@
     
     <section class="cards-wrapper">
       <div class="card-grid-space">
-        <a class="card" href="{{ url_for('temperature') }}" style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)">
+        <a class="card" href="{{ url_for('temperature') }}" style="--bg-img: url('/static/img/temperature.png')">
           <div>
             <h1>Temperature Conversion</h1>
           </div>
         </a>
       </div>
       <div class="card-grid-space">
-        <a class="card" href="{{ url_for('weight') }}" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+        <a class="card" href="{{ url_for('weight') }}" style="--bg-img: url('/static/img/weight.png')">
           <div>
             <h1>Weight Conversion</h1>
           </div>
         </a>
       </div>
       <div class="card-grid-space">
-          <a class="card" href="{{ url_for('length') }}" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+          <a class="card" href="{{ url_for('length') }}" style="--bg-img: url('/static/img/length.png')">
             <div>
               <h1>Length Conversion</h1>
             </div>
@@ -35,6 +35,6 @@
       </section>
 </section>
 
-<h5 style="text-align: center;">Click on the button to visit the main page..<a href="{{ url_for('mainpage') }}"><button type="button" class="glow-on-hover">Click here</button></a></h5>
+<h5 style="text-align: center;"><a href="{{ url_for('mainpage') }}"><button type="button" class="glow-on-hover">Home</button></a></h5>
 
 {% endblock %}
